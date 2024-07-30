@@ -1,5 +1,6 @@
 const prompt = require("prompt-sync")();
-const { cadastrarNome, listarUsuarios, atualizarNome, deletarUsuario } = require("./idCrud.js");
+
+const { criar, atualizar, remover, listar } = require("./usuario.js");
 
 while (true) {
     console.log(`
@@ -14,18 +15,19 @@ while (true) {
 
     switch (opcao) {
     case 1:
-        cadastrarNome()
+        criar()
         break;
     case 2:
-        listarUsuarios()
+        listar()
         break;
     case 3:
-        atualizarNome()
+        atualizar()
         break;
     case 4:
-        deletarUsuario()
+        remover()
         break;
     case 5:
+        console.log("Finalizando system...")
         process.exit()
         break;
     default:
